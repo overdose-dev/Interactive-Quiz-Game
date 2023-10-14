@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Interactive Quiz Game</title>
+  </head>
+  <body>
+    <section id="welcomeSection">
+      <span
+        id="readyText"
+        style="
+          font-size: 24px;
+          font-weight: 550;
+          color: #eceffe;
+          margin-bottom: 5px;
+        "
+      ></span>
+      <span
+        class="buttonsContainer"
+        style="display: flex; justify-content: space-around"
+      >
+        <button class="goBtn">Let's Go</button>
+        <button class="noBtn">Not Now</button>
+      </span>
+    </section>
+    <script src="script.js"></script>
+    <script>
+      // Get the email from the URL query parameter
+      const params = new URLSearchParams(window.location.search);
+      const playerName = params.get("playerName");
+
+      // Display the email in the HTML
+      const readyText = document.getElementById("readyText");
+      readyText.textContent = `Howdy ${playerName}, are you ready for battle?`;
+
+      // For Let's go and Not Now buttons
+      const goBtn = document.querySelector(".goBtn");
+      const noBtn = document.querySelector(".noBtn");
+
+      goBtn.addEventListener("click", function () {
+        window.location.href = "game.html?";
+      });
+      noBtn.addEventListener("click", function () {
+        window.location.href = "index.html?";
+      });
+    </script>
+  </body>
+</html>
