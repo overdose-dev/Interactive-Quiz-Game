@@ -109,6 +109,10 @@ body {
   margin-bottom: 1.2rem;
 }
 
+.Q1 {
+  display: none;
+}
+
 .question {
   width: 60vw;
   background-color: white;
@@ -200,10 +204,24 @@ body {
     z-index: 99;
   }
 
+  .questionNo {
+    display: none;
+  }
+
+  .Q1 {
+    display: block;
+    color: #5278a2;
+    font-weight: bold;
+    font-size: 2.6rem;
+    text-align: left;
+    margin-top: 1.5rem;
+  }
+
   .question {
     margin: 1.5rem 0;
     padding: 0.7rem 0.4rem;
     font-size: 1.5rem;
+    font-weight: bold;
     display: flex;
   }
 
