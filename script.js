@@ -17,3 +17,19 @@ submitButton.addEventListener("click", function (event) {
     )}`;
   }
 });
+
+// Displays text saying 'Correct Answer' or 'Wrong Answer' depending on the selected answer by the player
+
+// const answerStatus = document.getElementById("answerStatus");
+
+// answerStatus.addEventListener("click", function (event) {
+//   event.preventDefault();
+
+//   if (answer is correct) {
+//     answerStatus.style.color = "green";
+//     answerStatus.innerText = "Correct Answer";
+//   } else {
+//     answerStatus.style.color = "red";
+//     answerStatus.innerText = "Wrong Answer";
+//   }
+// });

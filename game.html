@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <style>
       body {
         background: url(images/57622.jpg) no-repeat;
@@ -14,21 +18,19 @@
   <body>
     <section id="GameSection">
       <div id="questionArea">
-        <p class="questionNo">Question 1</p>
+        <p class="questionNo" id="questionNo">Question 1</p>
         <p class="Q1">Q1</p>
-        <p class="question">Who built this quiz?</p>
-        <span id="options">
-          <section id="up">
-            <span class="a">Olanrewaju Folarin</span>
-            <span class="b">Chinaza</span>
-          </section>
-          <section id="bottom">
-            <span class="c">Oyedeji Pelumi</span>
-            <span class="d">Vivian Afolabi</span>
-          </section>
-        </span>
+        <p class="question" id="question">Who built this quiz?</p>
+        <div id="options">
+          <button class="answer-options">Olanrewaju Folarin</button>
+          <button class="answer-options">Chinaza</button>
+          <button class="answer-options">Oyedeji Pelumi</button>
+          <button class="answer-options">Vivian Afolabi</button>
+        </div>
+        <p class="answerStatus"></p>
         <button id="submitAnswerBtn">Submit</button>
       </div>
+      <i class="fa-solid fa-right-long" id="next-btn"></i>
     </section>
     <script src="script.js"></script>
     <script src="game.js"></script>
