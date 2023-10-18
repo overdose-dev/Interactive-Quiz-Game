@@ -32,10 +32,15 @@ const question = document.querySelector(".question");
 const options = document.getElementById("options");
 const answerStatus = document.querySelector(".answerStatus");
 const nextButton = document.getElementById("next-btn");
+const submitAnswerBtn = document.getElementById("submitAnswerBtn");
 var currentQuestionNumber = document.getElementById("question-numb");
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+// nextButton.addEventListener("click", () => {
+//   currentQuestionIndex++;
+// });
 
 function startQuiz() {
   currentQuestionIndex = 0;
@@ -45,7 +50,8 @@ function startQuiz() {
 
 function showQuestion() {
   resetState();
-  let currentQuestion = questions[currentQuestionIndex];
+  const generateRandomQuestion = Math.floor(Math.random() * questions.length);
+  let currentQuestion = questions[generateRandomQuestion];
   currentQuestionNumber.textContent = currentQuestionIndex + 1;
   question.textContent = currentQuestion.question;
 
@@ -89,5 +95,18 @@ function selectAnswer(e) {
   });
   nextButton.style.display = "block";
 }
+
+nextButton.addEventListener("click", () => {
+  answerStatus.style.display = "none";
+  nextButton.style.display = "none";
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    window.location.href = "score.html";
+    submitAnswerBtn.innerHTML = "Play Again";
+    submitAnswerBtn.style.display = "block";
+  }
+});
 
 startQuiz();

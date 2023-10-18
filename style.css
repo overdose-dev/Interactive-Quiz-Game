@@ -148,10 +148,14 @@ body {
   transition: all 0.3s;
 }
 
-.answer-options:hover {
+.answer-options:hover:not([disabled]) {
   background-color: #d3dbfd;
   border: 4px solid #749cd7;
   cursor: pointer;
+}
+
+.answer-options:disabled {
+  cursor: no-drop;
 }
 
 .answerStatus {
@@ -159,6 +163,7 @@ body {
   font-weight: 600;
   font-style: italic;
   margin-top: 35px;
+  margin-bottom: 10px;
   display: block;
   font-size: 1.6rem;
 }
@@ -198,6 +203,7 @@ body {
   transform: translate(-50%, -13%);
   z-index: 99;
   font-size: 30px;
+  cursor: pointer;
   display: none;
 }
 
@@ -271,11 +277,6 @@ body {
   }
 
   .answerStatus {
-    text-align: center;
-    font-weight: 600;
-    font-style: italic;
-    margin-top: 35px;
-    display: block;
     font-size: 1rem;
   }
 
