@@ -29,9 +29,10 @@ const questions = [
 ];
 
 const question = document.querySelector(".question");
-const answerOptions = document.querySelector(".answer-options");
-const submitAnswerBtn = document.getElementById("submitAnswerBtn");
-const answerStatus = document.querySelector(".answer-status");
+const options = document.getElementById("options");
+const answerStatus = document.querySelector(".answerStatus");
+const nextButton = document.getElementById("next-btn");
+var currentQuestionNumber = document.getElementById("question-numb");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -45,7 +46,7 @@ function startQuiz() {
 function showQuestion() {
   resetState();
   let currentQuestion = questions[currentQuestionIndex];
-//   let questionNo = currentQuestionIndex + 1;
+  currentQuestionNumber.textContent = currentQuestionIndex + 1;
   question.textContent = currentQuestion.question;
 
   currentQuestion.answers.forEach((answer) => {
@@ -80,6 +81,13 @@ function selectAnswer(e) {
     answerStatus.style.display = "block";
     answerStatus.style.color = "red";
   }
+  Array.from(options.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextButton.style.display = "block";
 }
 
 startQuiz();

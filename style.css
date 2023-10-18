@@ -159,9 +159,8 @@ body {
   font-weight: 600;
   font-style: italic;
   margin-top: 35px;
-  color: red;
   display: block;
-  z-index: 999;
+  font-size: 1.6rem;
 }
 
 #submitAnswerBtn {
@@ -174,7 +173,7 @@ body {
   color: white;
   font-size: 1.4rem;
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: block;
+  display: none;
 }
 
 #submitAnswerBtn:hover {
@@ -194,10 +193,10 @@ body {
   color: white;
   padding: 10px;
   text-align: center;
-  bottom: 0.05rem;
+  bottom: 13%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  /* z-index: 99; */
+  transform: translate(-50%, -13%);
+  z-index: 99;
   font-size: 30px;
   display: none;
 }
@@ -271,6 +270,15 @@ body {
     padding: 0.5rem 1.2rem;
   }
 
+  .answerStatus {
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    margin-top: 35px;
+    display: block;
+    font-size: 1rem;
+  }
+
   #submitAnswerBtn {
     border-radius: 2.2rem;
     width: 75%;
@@ -278,6 +286,8 @@ body {
   }
 
   #next-btn {
+    bottom: 0.05rem;
+    transform: translate(-50%, -50%);
     display: none;
   }
 }
