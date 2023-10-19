@@ -47,7 +47,6 @@ var Q1 = document.querySelector(".Q1");
 
 let shuffleQuestions, currentQuestionIndex;
 
-// let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
