@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      body {
+        background: url(images/57622.jpg) no-repeat;
+      }
+
+      #questionArea {
+        background: none;
+      }
+
+      #submitAnswerBtn {
+        margin-top: 8rem;
+        display: block;
+      }
+    </style>
+    <title>Your Score!</title>
+  </head>
+  <body>
+    <section id="GameSection">
+      <div id="questionArea">
+        <p id="congratulatoryMessage">
+          Congratulations, you scored
+          <span>score</span>
+        </p>
+        <button id="submitAnswerBtn">Try Again</button>
+      </div>
+    </section>
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+    <script>
+      submitAnswerBtn.addEventListener("click", function () {
+        window.location.href = "game.html?";
+      });
+    </script>
+  </body>
+</html>

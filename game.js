@@ -9,6 +9,15 @@ const questions = [
     ],
   },
   {
+    question: "Pick out the odd one?",
+    answers: [
+      { text: "Facebook", correct: false },
+      { text: "X (Twitter)", correct: true },
+      { text: "WhatsApp", correct: false },
+      { text: "Instagram", correct: false },
+    ],
+  },
+  {
     question: "What is the Capital of Abuja?",
     answers: [
       { text: "Akure", correct: false },
@@ -34,25 +43,25 @@ const answerStatus = document.querySelector(".answerStatus");
 const nextButton = document.getElementById("next-btn");
 const submitAnswerBtn = document.getElementById("submitAnswerBtn");
 var currentQuestionNumber = document.getElementById("question-numb");
+var Q1 = document.querySelector(".Q1");
 
-let currentQuestionIndex = 0;
+let shuffleQuestions, currentQuestionIndex;
+
+// let currentQuestionIndex = 0;
 let score = 0;
-
-// nextButton.addEventListener("click", () => {
-//   currentQuestionIndex++;
-// });
 
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
+  shuffleQuestions = questions.sort(() => Math.random() - 0.5);
   showQuestion();
 }
 
 function showQuestion() {
   resetState();
-  const generateRandomQuestion = Math.floor(Math.random() * questions.length);
-  let currentQuestion = questions[generateRandomQuestion];
+  let currentQuestion = shuffleQuestions[currentQuestionIndex];
   currentQuestionNumber.textContent = currentQuestionIndex + 1;
+  Q1.textContent = `Q${currentQuestionIndex + 1}`;
   question.textContent = currentQuestion.question;
 
   currentQuestion.answers.forEach((answer) => {
