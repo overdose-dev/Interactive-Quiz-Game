@@ -18,6 +18,15 @@ const questions = [
     ],
   },
   {
+    question: "How many bones are there in the human body?",
+    answers: [
+      { text: "50", correct: false },
+      { text: "200", correct: false },
+      { text: "206", correct: true },
+      { text: "300", correct: false },
+    ],
+  },
+  {
     question: "What is the Capital of Abuja?",
     answers: [
       { text: "Akure", correct: false },
@@ -27,12 +36,40 @@ const questions = [
     ],
   },
   {
+    question: "What is the largest ocean in the world?",
+    answers: [
+      { text: "Indian Ocean", correct: false },
+      { text: "Atlantic Ocean", correct: false },
+      { text: "Pacific Ocean", correct: true },
+      { text: "Arctic Ocean", correct: false },
+    ],
+  },
+  {
+    question:
+      "Which is the only planet in our solar system that rotates on its side?",
+    answers: [
+      { text: "Mercury", correct: false },
+      { text: "Venus", correct: false },
+      { text: "Uranus", correct: true },
+      { text: "Mars", correct: false },
+    ],
+  },
+  {
     question: "Pick the odd one here?",
     answers: [
       { text: "Konoha", correct: false },
       { text: "Cave", correct: false },
       { text: "Orthodox", correct: true },
       { text: "Billionaire Club", correct: false },
+    ],
+  },
+  {
+    question: "Which planet is known as the Red Planet?",
+    answers: [
+      { text: "Jupiter", correct: false },
+      { text: "Venus", correct: false },
+      { text: "Earth", correct: false },
+      { text: "Mars", correct: true },
     ],
   },
 ];
