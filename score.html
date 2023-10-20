@@ -29,14 +29,25 @@
       <div id="questionArea">
         <p id="congratulatoryMessage">
           Congratulations, you scored
-          <span>score</span>
+          <span id="score"></span>
         </p>
-        <button id="submitAnswerBtn">Try Again</button>
+        <button id="submitAnswerBtn">Play Again</button>
       </div>
     </section>
     <script src="script.js"></script>
     <script src="game.js"></script>
     <script>
+      window.addEventListener("load", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const score = urlParams.get("score");
+
+        if (score !== null) {
+          const scoreElement = document.getElementById("score");
+          const percentage = (score / questions.length) * 100;
+          scoreElement.innerHTML = percentage.toFixed() + "%";
+        }
+      });
+
       submitAnswerBtn.addEventListener("click", function () {
         window.location.href = "game.html?";
       });

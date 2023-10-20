@@ -44,6 +44,7 @@ const nextButton = document.getElementById("next-btn");
 const submitAnswerBtn = document.getElementById("submitAnswerBtn");
 var currentQuestionNumber = document.getElementById("question-numb");
 var Q1 = document.querySelector(".Q1");
+var scoreElement = document.getElementById("score");
 
 let shuffleQuestions, currentQuestionIndex;
 
@@ -89,6 +90,7 @@ function selectAnswer(e) {
     answerStatus.textContent = "Correct Answer";
     answerStatus.style.display = "block";
     answerStatus.style.color = "green";
+    score++;
   } else {
     selectedBtn.classList.add("incorrect");
     answerStatus.textContent = "Wrong Answer";
@@ -111,10 +113,14 @@ nextButton.addEventListener("click", () => {
   if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
-    window.location.href = "score.html";
-    submitAnswerBtn.innerHTML = "Play Again";
-    submitAnswerBtn.style.display = "block";
+    window.location.href = `score.html?score=${encodeURIComponent(score)}`;
   }
 });
+
+function showScore() {
+  resetState();
+  scoreElement.textContent = `You scored: ${score}`;
+  scoreElement.style.display = "block";
+}
 
 startQuiz();
