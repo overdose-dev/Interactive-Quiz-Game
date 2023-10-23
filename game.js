@@ -3,7 +3,7 @@ const questions = [
     question: "Who built this quiz?",
     answers: [
       { text: "Olanrewaju Folarin", correct: false },
-      { text: "Chinaza", correct: true },
+      { text: "Chinazaekpere", correct: true },
       { text: "Oyedeji Pelumi", correct: false },
       { text: "Vivian Afolabi", correct: false },
     ],
